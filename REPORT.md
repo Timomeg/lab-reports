@@ -55,3 +55,11 @@ EOF`
 #### 7. Создание маски для контроля доступа к файлу
 ###### Вывод гист токена и запись этого токена в файл
 `$ (umask 0077 && echo ${GIST_TOKEN} > ~/.gist)`
+#### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
+`$ export LAB_NUMBER=01`
+`$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}`
+`$ mkdir reports/lab${LAB_NUMBER}`
+`$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md`
+`$ cd reports/lab${LAB_NUMBER}`
+`$ edit REPORT.md`
+`$ gist REPORT.md`
