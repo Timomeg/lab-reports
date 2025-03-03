@@ -42,10 +42,10 @@
 `$ echo ${PATH}`
 ###### Создание директории scripts
 `$ mkdir scripts`
-###### Создание файла activate в директории scripts и запись в него скрипта export PATH=\${PATH}:`pwd`/node/bin
+###### Создание файла activate в директории scripts и запись в него скрипта export PATH=\${PATH}: pwd /node/bin
 ######(<<EOF EOF нужны для передачи многострочного текста в cat)
 `$ cat > scripts/activate<<EOF
-export PATH=\${PATH}:`pwd`/node/bin
+export PATH=\${PATH}: pwd /node/bin
 EOF`
 ###### Запуск файла scripts/activate
 `$ source scripts/activate`
