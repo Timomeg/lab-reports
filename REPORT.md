@@ -16,9 +16,10 @@
 `$ pwd`
 
 #### 3. Создание(если не существует) директорий workspace/tasks/, workspace/projects/, workspace/reports/
-```$ mkdir -p workspace/tasks/```
-```$ mkdir -p workspace/projects/```
-```$ mkdir -p workspace/reports/```
+```$ mkdir -p workspace/tasks/
+$ mkdir -p workspace/projects/
+$ mkdir -p workspace/reports/
+```
 ###### Изменение текущей директории на workspace
 `$ cd workspace`
 
@@ -56,10 +57,11 @@ EOF`
 ###### Вывод гист токена и запись этого токена в файл
 `$ (umask 0077 && echo ${GIST_TOKEN} > ~/.gist)`
 #### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
-```$ export LAB_NUMBER=01```
-```$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}```
-```$ mkdir reports/lab${LAB_NUMBER}```
-```$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md```
-```$ cd reports/lab${LAB_NUMBER}```
-```$ edit REPORT.md```
-```$ gist REPORT.md```
+```$ export LAB_NUMBER=01
+$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+$ mkdir reports/lab${LAB_NUMBER}
+$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+$ cd reports/lab${LAB_NUMBER}
+$ edit REPORT.md
+$ gist REPORT.md
+```
