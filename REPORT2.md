@@ -32,10 +32,19 @@ $ git config -e --global
 `$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git`
 ###### Выгрузка ветки master в локальный репозиторий
 `$ git pull origin master`
+Из https://github.com/Timomeg/lab02
+ * branch            master     -> FETCH_HEAD
+Уже актуально.
 ###### Создание файла README.md, проверка текущего статуса рабочей директории, добавление область подготовленных файлов, коммит и добавление в удалённый репозиторий файла README.md
 ```
 $ touch README.md
 $ git status
+```
+Текущая ветка: master
+Эта ветка соответствует «origin/master».
+
+нечего коммитить, нет изменений в рабочем каталоге
+```
 $ git add README.md
 $ git commit -m"added README.md"
 $ git push origin master
@@ -92,6 +101,10 @@ EOF
 `$ edit README.md`
 #### 9. Проверка статуса локального репозитория
 `$ git status`
+Текущая ветка: master
+Эта ветка соответствует «origin/master».
+
+нечего коммитить, нет изменений в рабочем каталоге
 ###### Добавление всех директорий из workspace в область подготовленных файлов 
 `$ git add .`
 ###### Коммит директорий с сообщением added sources
