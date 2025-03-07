@@ -18,10 +18,10 @@ github.com:
 EOF
 $ git config --global hub.protocol https
 ```
-#### 3. создание директории projects/lab02 и использование её как рабочей
+#### 3. Создание директории projects/lab02 и использование её как рабочей
 
 `$ mkdir projects/lab02 && cd projects/lab02`
-###### Конфигурация настроей git и вывод этих настроек
+###### Конфигурация настроек git и вывод этих настроек
 ```
 $ git init
 $ git config --global user.name ${GITHUB_USERNAME}
