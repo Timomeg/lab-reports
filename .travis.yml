@@ -1,5 +1,8 @@
-language: cpp
 
+language: c
+compiler:
+  - gcc
+  - clang
 script:
 - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
 - cmake --build _build
