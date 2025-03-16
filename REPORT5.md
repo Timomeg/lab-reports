@@ -102,11 +102,6 @@ $ git push origin master
 $ travis login --auto
 $ travis enable
 ```
-#####
-```
-$ travis login --auto
-$ travis enable
-```
 #### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
 ```
  $ popd
