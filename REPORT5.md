@@ -1,22 +1,22 @@
-#### 
+##### Инициализация переменных GITHUB_USERNAME и изменение команды gsed на sed
 ```
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias gsed=sed # for *-nix system
 ```
-####
+#####
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 ```
-####
+#####
 ```
 $ git clone https://github.com/${GITHUB_USERNAME}/lab04 projects/lab05
 $ cd projects/lab05
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab05
 ```
-####
+#####
 ```
 $ mkdir third-party
 $ git submodule add https://github.com/google/googletest third-party/gtest
@@ -24,7 +24,7 @@ $ cd third-party/gtest && git checkout release-1.8.1 && cd ../..
 $ git add third-party/gtest
 $ git commit -m"added gtest framework"
 ```
-####
+#####
 ```
 $ gsed -i '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
@@ -41,7 +41,7 @@ if(BUILD_TESTS)
 endif()
 EOF
 ```
-####
+#####
 ```
 $ mkdir tests
 $ cat > tests/test1.cpp <<EOF
@@ -66,18 +66,18 @@ TEST(Print, InFileStream)
 }
 EOF
 ```
-####
+#####
 ```
 $ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
 ```
-####
+#####
 ```
 $ _build/check
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
-####
+#####
 ```
 $ gsed -i 's/lab04/lab05/g' README.md
 $ gsed -i 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
@@ -85,11 +85,11 @@ $ gsed -i '/cmake --build _build --target install/a\
 - cmake --build _build --target test -- ARGS=--verbose
 ' .travis.yml
 ```
-####
+#####
 ```
 $ travis lint
 ```
-####
+#####
 ```
 $ git add .travis.yml
 $ git add tests
@@ -97,12 +97,12 @@ $ git add -p
 $ git commit -m"added tests"
 $ git push origin master
 ```
-####
+#####
 ```
 $ travis login --auto
 $ travis enable
 ```
-####
+#####
 ```
 $ travis login --auto
 $ travis enable
