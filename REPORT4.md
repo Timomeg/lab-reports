@@ -105,7 +105,10 @@ $ travis whatsup
 ```
 $ travis branches
 ```
-
+###### Вывод:
+```
+master:  #3    passed     Add Gtest dependencies
+```
 ##### Вывод истории билдов
 ```
 $ travis history
