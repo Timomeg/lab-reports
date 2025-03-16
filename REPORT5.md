@@ -110,7 +110,7 @@ $ travis enable
 #### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
 ```
  $ popd
- $ export LAB_NUMBER=03
+ $ export LAB_NUMBER=05
  $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
  $ mkdir reports/lab${LAB_NUMBER}
  $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
