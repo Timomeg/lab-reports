@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.4)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_EXAMPLES "Build examples" OFF)
 
 project(print)
 
@@ -40,8 +39,6 @@ install(TARGETS print
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
 install(EXPORT print-config DESTINATION cmake)
 
-option(BUILD_EXAMPLES "Build examples" OFF)
-option(BUILD_TESTS "Build tests" OFF)
 
 if(BUILD_TESTS)
   enable_testing()
