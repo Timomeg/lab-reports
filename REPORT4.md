@@ -110,7 +110,12 @@ $ travis branches
 ```
 $ travis history
 ```
-###### Вывод: master:  #3    passed     Add Gtest dependencies
+###### Вывод: 
+```
+#3 passed:       master Add Gtest dependencies
+#2 passed:       master Update master
+#1 passed:       master travis
+```
 ##### Вывод детальной информации о билде
 ```
 $ travis show
