@@ -3,20 +3,20 @@
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias gsed=sed # for *-nix system
 ```
-#####
+##### Использование рабочей директории, размещение директории на стеке и запуска файла scripts/activate
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 ```
-#####
+##### Клонирование репозитория четвёртого лабораторной работы в директорию projects/lab04 и её использование, удаление связи с прошлым удалённым репозиторием и добавление нового
 ```
 $ git clone https://github.com/${GITHUB_USERNAME}/lab04 projects/lab05
 $ cd projects/lab05
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab05
 ```
-#####
+##### Создание директории third-party и добавление в неё библиотеки GTest, коммит изменений в Git репозиторий
 ```
 $ mkdir third-party
 $ git submodule add https://github.com/google/googletest third-party/gtest
@@ -41,7 +41,7 @@ if(BUILD_TESTS)
 endif()
 EOF
 ```
-#####
+##### Создание директории tests и добавление в неё файла test1.cpp с тестами
 ```
 $ mkdir tests
 $ cat > tests/test1.cpp <<EOF
@@ -66,7 +66,7 @@ TEST(Print, InFileStream)
 }
 EOF
 ```
-#####
+##### Сборка с помощью CMake
 ```
 $ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
@@ -85,11 +85,12 @@ $ gsed -i '/cmake --build _build --target install/a\
 - cmake --build _build --target test -- ARGS=--verbose
 ' .travis.yml
 ```
-#####
+##### Проверка на корректность файла .travis.yml
 ```
 $ travis lint
 ```
-#####
+###### Вывод для travis lint: Hooray, .travis.yml looks valid :)
+##### Коммит тестов и файла .travis.yml в Git репозиторий
 ```
 $ git add .travis.yml
 $ git add tests
@@ -97,7 +98,7 @@ $ git add -p
 $ git commit -m"added tests"
 $ git push origin master
 ```
-#####
+##### Вход в аккаунт travis ci и его подключение к репозиторию
 ```
 $ travis login --auto
 $ travis enable
