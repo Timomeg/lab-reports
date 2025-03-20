@@ -103,6 +103,13 @@ $ git push origin master
 $ travis login --auto
 $ travis enable
 ```
+#####
+```
+$ mkdir artifacts
+$ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
+# for macOS: $ screencapture -T 20 artifacts/screenshot.png
+# open https://github.com/${GITHUB_USERNAME}/lab05
+```
 #### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
 ```
  $ popd
