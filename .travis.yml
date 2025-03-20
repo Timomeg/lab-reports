@@ -4,9 +4,10 @@ compiler:
   - gcc
   - clang
 script:
-- cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
+- cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON -DBUILD_TESTS=ON
 - cmake --build _build
 - cmake --build _build --target install
+- cmake --build _build --target test -- ARGS=--verbose
 - cmake --build _build --target test -- ARGS=--verbose
 
 addons:
