@@ -1,59 +1,16 @@
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.14)
+
+project(print)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-project(print)
+add_library(prin STATIC sources/print.cpp)
+include_directories(include)
+add_executable(example1 examples/example1.cpp)
+add_executable(example2 examples/example2.cpp)
 
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
-)
-add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
+target_link_libraries(example1 print)
+target_link_libraries(example2 print)
 
-target_include_directories(print PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-)
-
-if(BUILD_EXAMPLES)
-  file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
-  foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
-    get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
-    add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
-    target_link_libraries(${EXAMPLE_NAME} print)
-    install(TARGETS ${EXAMPLE_NAME}
-      RUNTIME DESTINATION bin
-    )
-  endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
-endif()
-
-install(TARGETS print
-    EXPORT print-config
-    ARCHIVE DESTINATION lib
-    LIBRARY DESTINATION lib
-)
-
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
-install(EXPORT print-config DESTINATION cmake)
-
-
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory(third-party/gtest)
-  file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
-  add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
-  target_link_libraries(check ${PROJECT_NAME} gtest_main)
-  add_test(NAME check COMMAND check)
-endif()
-
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory(third-party/gtest)
-  file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
-  add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
-  target_link_libraries(check ${PROJECT_NAME} gtest_main)
-  add_test(NAME check COMMAND check)
-endif()
