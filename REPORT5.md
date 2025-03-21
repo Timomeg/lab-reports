@@ -24,7 +24,7 @@ $ cd third-party/gtest && git checkout release-1.8.1 && cd ../..
 $ git add third-party/gtest
 $ git commit -m"added gtest framework"
 ```
-#####
+##### Добавление зависимостей для тестов в CMakeLists.txt
 ```
 $ gsed -i '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
@@ -66,18 +66,18 @@ TEST(Print, InFileStream)
 }
 EOF
 ```
-##### Сборка с помощью CMake
+##### Подключение тестов в CMake, сборка и тестирование проекта с помощью CMake
 ```
 $ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
 ```
-#####
+##### Запуск файла _build/check
 ```
 $ _build/check
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
-#####
+##### Добавление текста в README.md и CMake команд в файл .travis.yml
 ```
 $ gsed -i 's/lab04/lab05/g' README.md
 $ gsed -i 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
@@ -103,7 +103,7 @@ $ git push origin master
 $ travis login --auto
 $ travis enable
 ```
-#####
+##### Создаём директорию artifacts, делаем скриншот и сохраняем в artifacts
 ```
 $ mkdir artifacts
 $ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
