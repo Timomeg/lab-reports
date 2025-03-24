@@ -142,6 +142,12 @@ $ mkdir artifacts
 $ mv _build/*.tar.gz artifacts
 $ tree artifacts
 ```
+###### Вывод:
+```
+artifacts
+└── print-0.1.0.0-Linux.tar.gz
+1 directory, 1 file
+```
 #### Отчёт: скачиваем репозиторий с лабораторной работой, создаём в нём отчёт и загружаем через gist
 ```
  $ popd
