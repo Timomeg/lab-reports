@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/example1.dir/examples/example1.cpp.o -o example1  libprint.a 

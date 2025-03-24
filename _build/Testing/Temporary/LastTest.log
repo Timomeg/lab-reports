@@ -1,0 +1,29 @@
+Start testing: Mar 24 23:05 MSK
+----------------------------------------------------------
+1/1 Testing: check
+1/1 Test: check
+Command: "/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/check"
+Directory: /home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build
+"check" start time: Mar 24 23:05 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/third-party/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Print
+[ RUN      ] Print.InFileStream
+[       OK ] Print.InFileStream (0 ms)
+[----------] 1 test from Print (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"check" end time: Mar 24 23:05 MSK
+"check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 24 23:05 MSK
