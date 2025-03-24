@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprin.a CMakeFiles/prin.dir/sources/print.cpp.o
-/usr/bin/ranlib libprin.a
