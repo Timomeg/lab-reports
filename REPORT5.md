@@ -66,15 +66,31 @@ TEST(Print, InFileStream)
 }
 EOF
 ```
-##### Подключение тестов в CMake, сборка и тестирование проекта с помощью CMake
+##### Подключение тестов в CMake, сборка и тестирование проекта с помощью CMake и Googletest
 ```
 $ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
 ```
-##### Запуск файла _build/check
+##### Запуск файла _build/check, подробный вывод хода тестирования
 ```
 $ _build/check
+```
+###### Вывод:
+```
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Print
+[ RUN      ] Print.InFileStream
+[       OK ] Print.InFileStream (0 ms)
+[----------] 1 test from Print (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+```
+```
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
 ##### Добавление текста в README.md и CMake команд в файл .travis.yml
