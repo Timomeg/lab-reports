@@ -128,7 +128,7 @@ $ git push origin master --tags
 $ travis login --auto
 $ travis enable
 ```
-##### Сборка проекта с помощью CMake, 
+##### Сборка проекта с помощью CMake
 ```
 $ cmake -H. -B_build
 $ cmake --build _build
