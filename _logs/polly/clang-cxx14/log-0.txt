@@ -1,0 +1,36 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "--version"
+cmake version 3.25.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/clang-cxx14`
+  `-GUnix Makefiles`
+  `-DCMAKE_TOOLCHAIN_FILE=/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/tools/polly/clang-cxx14.cmake`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "-H." "-B/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/clang-cxx14" "-GUnix Makefiles" "-DCMAKE_TOOLCHAIN_FILE=/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/tools/polly/clang-cxx14.cmake"
+-- [polly] Used toolchain: clang / c++14 support
+
+clang not found
+
+CMake Error at tools/polly/utilities/polly_fatal_error.cmake:10 (message):
+Call Stack (most recent call first):
+  tools/polly/compiler/clang.cmake:23 (polly_fatal_error)
+  tools/polly/clang-cxx14.cmake:20 (include)
+  /usr/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake:124 (include)
+  CMakeLists.txt:15 (project)
+
+
+-- Configuring incomplete, errors occurred!
+CMake Error: CMake was unable to find a build program corresponding to "Unix Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.

@@ -1,0 +1,67 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "--version"
+cmake version 3.25.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default`
+  `-DCMAKE_TOOLCHAIN_FILE=/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/tools/polly/default.cmake`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "-H." "-B/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default" "-DCMAKE_TOOLCHAIN_FILE=/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/tools/polly/default.cmake"
+-- [polly] Used toolchain: Default
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- [hunter] Calculating Toolchain-SHA1
+-- [hunter] Calculating Config-SHA1
+-- [hunter] HUNTER_ROOT: /home/timomeg/projects/hunter
+-- [hunter] [ Hunter-ID: xxxxxxx | Toolchain-ID: 534d6c7 | Config-ID: d14f46d ]
+-- [hunter] GTEST_ROOT: /home/timomeg/projects/hunter/_Base/xxxxxxx/534d6c7/d14f46d/Install (ver.: 1.15.2)
+-- Found GTest: /home/timomeg/projects/hunter/_Base/xxxxxxx/534d6c7/d14f46d/Install/lib/cmake/GTest/GTestConfig.cmake (found version "1.15.2")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default
+Execute command: [
+  `cmake`
+  `--build`
+  `/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default`
+  `--`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "--build" "/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default" "--"
+[ 25%] Building CXX object CMakeFiles/print.dir/sources/print.cpp.o
+[ 50%] Linking CXX static library libprint.a
+[ 50%] Built target print
+[ 75%] Building CXX object CMakeFiles/demo.dir/demo/main.cpp.o
+[100%] Linking CXX executable demo
+[100%] Built target demo
+Execute command: [
+  `ctest`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_builds/default]> "ctest"
+*********************************
+No test configuration file found!
+*********************************
+Usage
+
+  ctest [options]
+

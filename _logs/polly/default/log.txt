@@ -1,0 +1,14 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports]> "cmake" "--version"
+cmake version 3.25.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
