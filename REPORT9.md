@@ -1,11 +1,11 @@
-#### 
+#####
 ```
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export PACKAGE_MANAGER=<пакетный менеджер>
 $ export GPG_PACKAGE_NAME=<gpg2|gpg>
 ```
-####
+#####
 ```
 # for *-nix system
 $ $PACKAGE_MANAGER install xclip
@@ -13,14 +13,14 @@ $ alias gsed=sed
 $ alias pbcopy='xclip -selection clipboard'
 $ alias pbpaste='xclip -selection clipboard -o'
 ```
-####
+#####
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 $ go get github.com/aktau/github-release
 ```
-####
+##### Клонирование репозитория восьмой лабораторной работы в директорию projects/lab09 и её использование, удаление связи с прошлым удалённым репозиторием и добавление нового
 ```
 $ git clone https://github.com/${GITHUB_USERNAME}/lab08 projects/lab09
 $ cd projects/lab09

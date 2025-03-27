@@ -1,4 +1,4 @@
-##### Инициализация переменных GITHUB_USERNAME и изменение команды gsed на sed
+##### Инициализация переменной GITHUB_USERNAME и изменение команды gsed на sed
 ```
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias gsed=sed
@@ -9,7 +9,7 @@ $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 ```
-##### Клонирование репозитория пятой лабораторной работы в директорию projects/lab06 и её использование, удаление связи с прошлым удалённым репозиторием и добавление нового
+##### Клонирование репозитория шестой лабораторной работы в директорию projects/lab07 и её использование, удаление связи с прошлым удалённым репозиторием и добавление нового
 ```
 $ git clone https://github.com/${GITHUB_USERNAME}/lab06 projects/lab07
 $ cd projects/lab07
