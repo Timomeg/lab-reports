@@ -17,3 +17,7 @@ addons:
     packages:
       - cmake
       - cmake-data
+services:
+- docker
+script:
+- docker build -t logger
