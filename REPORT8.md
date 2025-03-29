@@ -75,11 +75,11 @@ $ cat >> Dockerfile <<EOF
 ENTRYPOINT ./demo
 EOF
 ```
-#####
+##### Сборка logger
 ```
 $ docker build -t logger .
 ```
-#####
+##### Вывод образов
 ```
 $ docker images
 ```
@@ -98,17 +98,13 @@ text2
 text3
 <C-D>
 ```
-#####
+##### Вывод данных об образе
 ```
 $ docker inspect logger
 ```
 ##### Вывод содержимого log.txt
 ```
 $ cat logs/log.txt
-```
-###### Вывод:
-```
-
 ```
 ##### Добавление информации о лабораторной работе в README.md
 ```
