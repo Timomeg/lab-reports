@@ -47,28 +47,28 @@ RUN cmake --build _build
 RUN cmake --build _build --target install
 EOF
 ```
-#####
+##### Добавление пути до файла для логов
 ```
 $ cat >> Dockerfile <<EOF
 
 ENV LOG_PATH /home/logs/log.txt
 EOF
 ```
-#####
+##### Добавление тома для хранения данных
 ```
 $ cat >> Dockerfile <<EOF
 
 VOLUME /home/logs
 EOF
 ```
-#####
+##### Изменение рабочей директории
 ```
 $ cat >> Dockerfile <<EOF
 
 WORKDIR _install/bin
 EOF
 ```
-#####
+##### Установка исполняемого файла по умолчанию
 ```
 $ cat >> Dockerfile <<EOF
 
@@ -89,7 +89,7 @@ REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
 logger        latest    94845db3aa62   54 seconds ago   611MB
 hello-world   latest    74cc54e27dc4   2 months ago     10.1kB
 ```
-#####
+##### Создание директории logs и выполнение программы из Dockerfile для text1, text2, text3
 ```
 $ mkdir logs
 $ docker run -it -v "$(pwd)/logs/:/home/logs/" logger
@@ -102,15 +102,19 @@ text3
 ```
 $ docker inspect logger
 ```
-#####
+##### Вывод содержимого log.txt
 ```
 $ cat logs/log.txt
 ```
-#####
+###### Вывод:
+```
+
+```
+##### Добавление информации о лабораторной работе в README.md
 ```
 $ gsed -i 's/lab07/lab08/g' README.md
 ```
-#####
+##### Добавление тестов для Docker в .travis.yml с помощью vim
 ```
 $ vim .travis.yml
 /lang<CR>o
@@ -121,14 +125,14 @@ script:
 - docker build -t logger .<ESC>
 :wq
 ```
-#####
+##### Коммит Dockerfile и .travis.yml
 ```
 $ git add Dockerfile
 $ git add .travis.yml
 $ git commit -m"adding Dockerfile"
 $ git push origin master
 ```
-##### 
+##### Вход в аккаунт travis ci и его подключение к репозиторию
 ```
 $ travis login --auto
 $ travis enable
