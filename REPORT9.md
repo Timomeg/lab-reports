@@ -1,11 +1,11 @@
-#####
+##### Инициализация переменных GITHUB_USERNAME, GITHUB_TOKEN, PACKAGE_MANAGER, GPG_PACKAGE_NAME
 ```
 $ export GITHUB_TOKEN=<полученный_токен>
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export PACKAGE_MANAGER=<пакетный менеджер>
 $ export GPG_PACKAGE_NAME=<gpg2|gpg>
 ```
-#####
+##### Установка xclip, установка текстового редактора по умолчанию и изменение команды gsed на sed, 
 ```
 # for *-nix system
 $ $PACKAGE_MANAGER install xclip
@@ -13,7 +13,7 @@ $ alias gsed=sed
 $ alias pbcopy='xclip -selection clipboard'
 $ alias pbpaste='xclip -selection clipboard -o'
 ```
-#####
+##### Использование рабочей директории, размещение директории на стеке и запуска файла scripts/activate, 
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
@@ -27,11 +27,11 @@ $ cd projects/lab09
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
-####
+##### Добавление информации о лабораторной работе в README.md
 ```
 $ gsed -i 's/lab08/lab09/g' README.md
 ```
-####
+#####
 ```
 $ $PACKAGE_MANAGER install ${GPG_PACKAGE_NAME}
 $ gpg --list-secret-keys --keyid-format LONG
@@ -46,34 +46,34 @@ $ open https://github.com/settings/keys
 $ git config user.signingkey ${GPG_SEC_KEY_ID}
 $ git config gpg.program gpg
 ```
-####
+#####
 ```
 $ test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 $ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 ```
-####
+##### Сборка проекта с помощью CMake с тестами
 ```
 $ _build/check
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
-####
+##### Сборка проекта с помощью CMake
 ```
 $ cmake -H. -B_build -DCPACK_GENERATOR="TGZ"
 $ cmake --build _build --target package
 ```
-####
+##### Вход в аккаунт travis ci и его подключение к репозиторию
 ```
 $ travis login --auto
 $ travis enable
 ```
-####
+#####
 ```
 $ git tag -s v0.1.0.0
 $ git tag -v v0.1.0.0
 $ git show v0.1.0.0
 $ git push origin master --tags
 ```
-####
+#####
 ```
 $ github-release --version
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
@@ -84,7 +84,7 @@ $ github-release release \
     --name "libprint" \
     --description "my first release"
 ```
-####
+#####
 ```
 $ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
 $ export PACKAGE_FILENAME=print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz
@@ -95,7 +95,7 @@ $ github-release upload \
     --name "${PACKAGE_FILENAME}" \
     --file _build/*.tar.gz
 ```
-####
+#####
 ```
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/releases/download/v0.1.0.0/${PACKAGE_FILENAME}

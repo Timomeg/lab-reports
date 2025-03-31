@@ -1,21 +1,21 @@
-#### 
+##### Инициализация переменных GITHUB_USERNAME, PACKAGE_MANAGER
 ```
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export PACKAGE_MANAGER=<пакетный_менеджер>
 ```
-####
+##### Использование рабочей директории, установка vagrant
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ ${PACKAGE_MANAGER} install vagrant
 ```
-####
+#####
 ```
 $ vagrant version
 $ vagrant init bento/ubuntu-19.10
 $ less Vagrantfile
 $ vagrant init -f -m bento/ubuntu-19.10
 ```
-####
+##### Создание директории shared
 ```
 $ mkdir shared
 ```
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
   config.vagrant.plugins = ["vagrant-vbguest"]
 EOF
 ```
-####
+#####
 ```
 $ cat >> Vagrantfile <<EOF
 
@@ -63,7 +63,7 @@ $ cat >> Vagrantfile <<EOF
 end
 EOF
 ```
-####
+#####
 ```
 $ vagrant validate
 
@@ -79,15 +79,7 @@ $ vagrant snapshot list
 $ vagrant halt
 $ vagrant snapshot pop
 ```
-####
-```
-$ gsed -i 's/lab04/lab05/g' README.md
-$ gsed -i 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
-$ gsed -i '/cmake --build _build --target install/a\
-- cmake --build _build --target test -- ARGS=--verbose
-' .travis.yml
-```
-####
+#####
 ```
   config.vm.provider :vmware_esxi do |esxi|
 
@@ -105,7 +97,7 @@ $ gsed -i '/cmake --build _build --target install/a\
     esxi.guest_disk_type = 'thin'
   end
 ```
-####
+#####
 ```
 $ vagrant plugin install vagrant-vmware-esxi
 $ vagrant plugin list
