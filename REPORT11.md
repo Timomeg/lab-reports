@@ -1,4 +1,4 @@
-#### 
+#####
 ```
 $ cd ~
 $ mkdir install
@@ -7,11 +7,11 @@ $ export HOME_PREFIX=`pwd`/install
 $ echo $HOME_PREFIX
 $ export USERNAME=`whoami`
 ```
-####
+#####
 ```
 $ cd tmp
 ```
-####
+#####
 ```
 $ wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
 $ tar -xvzf libevent-2.1.8-stable.tar.gz
@@ -20,7 +20,7 @@ $ ./configure --prefix=${HOME_PREFIX}
 $ make && make install
 $ cd ..
 ```
-####
+#####
 ```
 $ wget http://invisible-island.net/datafiles/release/ncurses.tar.gz
 $ tar -xvzf ncurses.tar.gz
@@ -29,7 +29,7 @@ $ ./configure --prefix=${HOME_PREFIX}
 $ make && make install
 $ cd ..
 ```
-####
+#####
 ```
 $ wget https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz
 $ tar -xvzf tmux-2.5.tar.gz
@@ -38,7 +38,7 @@ $ ./configure --prefix=${HOME_PREFIX} CFLAGS="-I${HOME_PREFIX}/include -I${HOME_
 $ make && make install
 $ cd ..
 ```
-####
+#####
 ```
 $ mkdir tests
 $ cat > tests/test1.cpp <<EOF
@@ -63,32 +63,32 @@ TEST(Print, InFileStream)
 }
 EOF
 ```
-####
+#####
 ```
 $ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 $ unizp ngrok-stable-linux-amd64.zip
 $ mv ngrok ${HOME_PREFIX}/bin
 ```
-####
+#####
 ```
 $ export LD_LIBRARY_PATH=${HOME_PREFIX}/lib
 $ export PATH="${HOME_PREFIX}/bin:${PATH}"
 $ tmux
 ```
-####
+#####
 ```
 $ cd ~
 $ rm -rf tmp install
 ```
-####
+#####
 ```
 $ brew install tmux ngrok # or use linuxbrew 🎉
 ```
-####
+#####
 ```
 $ tmux new -s session_with_group
 ```
-####
+#####
 ```
 # Alisa:
 $ open https://ngrok.com/signup
@@ -97,7 +97,7 @@ $ ngrok authtoken ${NGROK_TOKEN}
 $ ngrok tcp 22
 <порт_ngrok_сервера>
 ```
-####
+#####
 ```
 # Bob:
 $ ssh ${USERNAME}@0.tcp.ngrok.io -p<порт_ngrok_сервера>
