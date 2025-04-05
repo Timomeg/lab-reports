@@ -31,7 +31,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 ```
 $ gsed -i 's/lab08/lab09/g' README.md
 ```
-#####
+##### Установка GPG, вывод секретных ключей, генерация нового ключа, добавление ключей на GITHUB, конфигурация коммитов с добавленным секретным ключом
 ```
 $ $PACKAGE_MANAGER install ${GPG_PACKAGE_NAME}
 $ gpg --list-secret-keys --keyid-format LONG
@@ -46,7 +46,7 @@ $ open https://github.com/settings/keys
 $ git config user.signingkey ${GPG_SEC_KEY_ID}
 $ git config gpg.program gpg
 ```
-#####
+##### Добавление терминала для GPG, добавление информации о терминале в файлы .bash_profile и .profile
 ```
 $ test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 $ echo 'export GPG_TTY=$(tty)' >> ~/.profile
@@ -66,14 +66,14 @@ $ cmake --build _build --target package
 $ travis login --auto
 $ travis enable
 ```
-#####
+##### Добавление тег релиза и вывод содержимого релиза
 ```
 $ git tag -s v0.1.0.0
 $ git tag -v v0.1.0.0
 $ git show v0.1.0.0
 $ git push origin master --tags
 ```
-#####
+##### Добавление информации о релизе с помощью github-release
 ```
 $ github-release --version
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
@@ -84,7 +84,7 @@ $ github-release release \
     --name "libprint" \
     --description "my first release"
 ```
-#####
+##### Загрузка архивов на GITHUB
 ```
 $ export PACKAGE_OS=`uname -s` PACKAGE_ARCH=`uname -m` 
 $ export PACKAGE_FILENAME=print-${PACKAGE_OS}-${PACKAGE_ARCH}.tar.gz
@@ -95,7 +95,7 @@ $ github-release upload \
     --name "${PACKAGE_FILENAME}" \
     --file _build/*.tar.gz
 ```
-#####
+##### Установка и распаковка архива lab09/releases с помощью wget
 ```
 $ github-release info -u ${GITHUB_USERNAME} -r lab09
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/releases/download/v0.1.0.0/${PACKAGE_FILENAME}

@@ -1,0 +1,10 @@
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/print.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/demo.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/package.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/package_source.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/edit_cache.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/rebuild_cache.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/list_install_components.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/install.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/install/local.dir
+/home/timomeg/Timomeg/workspace/tasks/labs_timp/lab-reports/_build/CMakeFiles/install/strip.dir
